@@ -1,0 +1,16 @@
+.airportSearch input {
+  text-transform: uppercase;
+}
+.airportSearch .list {
+  padding: 5px;
+  position: relative;
+  bottom: 0;
+}
+.airportSearch .list .content {
+  position: absolute;
+  z-index: 1;
+}
+.airportSearch .list .card {
+  margin: 0.1rem 0 0 0;
+  width: 100%;
+}

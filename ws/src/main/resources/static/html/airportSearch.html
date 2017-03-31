@@ -1,0 +1,26 @@
+<div class="airportSearch">
+
+    <div class="input-field">
+        <!--<i class="mdi-communication-call-made prefix"></i>-->
+        <input type="text" name="ad"
+               ng-model="code"
+               ng-keyup ="searchAirport(code)"
+               autocomplete="off"
+               id="input_{{ label }}"
+            />
+        <label for="input_{{ label }}">{{ label }}</label>
+    </div>
+
+	<div class="list" ng-show="activated">
+        <div class="content">
+            <a class="waves-effect waves-light card purple lighten-5" ng-repeat="airport in airports" href="#" ng-click="setAirport(airport)">
+                <div class="card-content purple-text">
+                    <div>{{ airport.iata }} / {{ airport.icao }}</div>
+                    <div>{{ airport.name }}</div>
+                    <div>{{ airport.country}}</div>
+                    <div><small>[{{ airport.latitude }} / {{ airport.longitude }} ]</small></div>
+                </div>
+            </a>
+        </div>
+	</div>
+</div>

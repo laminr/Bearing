@@ -1,0 +1,84 @@
+@color-bckg: #f4f4f4;
+@color-font: #7B7B7B;
+@font-title: 'Megrim', cursive;
+@font-eventual: 'Syncopate', sans-serif;
+
+body {
+    background-color: @color-bckg;
+    color: @color-font;
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    #title {
+        .font-title;
+        font-size: 2.5em;
+    }
+
+    .font-eventual {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+}
+
+.font-title {
+    font-family: @font-title;
+    font-size: 1.5em;
+}
+
+.font-eventual {
+    font-family: @font-eventual;
+}
+
+#map {
+    width: 100%;
+    height: 600px;
+    background-color: @color-bckg;
+}
+
+#route {
+    position: relative;
+}
+
+.bearing {
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -25px;
+    right: -20px;
+    z-index: 2;
+    text-align: center;
+    vertical-align: middle;
+
+    & > div {
+        margin: 0 auto;
+    }
+}
+#airportData {
+    .card-panel {
+        margin: 0;
+    }
+}
+
+#running {
+    margin : 50% auto;
+    width: 70%;
+}
+
+#lastRoutes {
+    .card-panel {
+        padding: 10px;
+        width: 100%;
+        margin: 0.2rem 0 0rem 0;
+    }
+}
+
+#leg {
+    height: 840px;
+    overflow: scroll;
+    overflow-x: hidden;
+}

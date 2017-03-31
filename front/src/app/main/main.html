@@ -1,0 +1,72 @@
+<main class="_container">
+  <div class="row">
+    <div class="col m9">
+      <div class="row">
+        <div class="col s4 m2">
+          <div class="font-title">
+            Last Routes
+          </div>
+          <div>
+            <ul id="lastRoutes">
+              <li ng-repeat="leg in lastRoute">
+                <a class="waves-effect waves-light card-panel purple-text center-align" href="#" ng-click="setRoute(leg.departure, leg.arrival)">
+                  {{ leg.departure.icao }} > {{ leg.arrival.icao }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col s8 m10">
+          <div class="font-title">Airports</div>
+          <div class="col s6">
+            <search-airport airport="departure" ad-label="'Departure'"></search-airport>
+          </div>
+          <div class="col s6">
+            <search-airport airport="arrival" ad-label="'Arrival'"></search-airport>
+          </div>
+          <div class="col s12">
+            <airport-data departure="departure" arrival="arrival"></airport-data>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div id="map" class="card"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col m3">
+      <div class="font-title">Route</div>
+      <div class="row" id="leg">
+        <div class="col s10">
+          <div id="running" ng-show="running">
+            <div class="preloader-wrapper big active">
+              <div class="spinner-layer spinner-purple">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div id="route" ng-repeat="leg in route">
+            <div class="card purple lighten-5">
+              <div class="card-content purple-text">
+                <div>{{ leg.point.y }}</div>
+                <div>{{ leg.point.x }}</div>
+              </div>
+            </div>
+            <div ng-hide="leg.z == 0" class="bearing purple valign-wrapper">
+              <div class="valign white-text ">
+                {{ leg.bearing }}&deg;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
